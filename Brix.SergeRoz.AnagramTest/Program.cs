@@ -10,7 +10,7 @@ namespace Brix.SergeRoz.AnagramTest
 {
     class Program
     {  
-        static async Task  Main(string[] args)
+        static void  Main(string[] args)
         {
             try
             {
@@ -20,7 +20,7 @@ namespace Brix.SergeRoz.AnagramTest
 
                 AnagramConsoleExecutor anagramExecutor = new AnagramConsoleExecutor(textGeneratorHelper, dao, anagramFinder);
 
-                await anagramExecutor.Run();
+                Task.Run(async () => await anagramExecutor.Run()).Wait();              
                 
             }
             catch(Exception e)

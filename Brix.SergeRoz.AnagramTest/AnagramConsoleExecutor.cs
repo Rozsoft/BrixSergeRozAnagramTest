@@ -150,7 +150,7 @@ namespace Brix.SergeRoz.AnagramTest
 
                 Console.WriteLine(UiMessages.TimeElapsedMsg + _AnagramFinder.FindStopwatch.Elapsed);
 
-                await RunAnagramsFoundDialogAsync();
+                await RunFoundAnagramsDialogAsync();
             }
         }
 
@@ -222,18 +222,20 @@ namespace Brix.SergeRoz.AnagramTest
 
         }
 
-        private async Task RunAnagramsFoundDialogAsync()
+        private async Task RunFoundAnagramsDialogAsync()
         {
             Console.WriteLine();
 
             if (_anagramFinderResult == null)
             {
-
+                Console.WriteLine(UiMessages.BorderMsg);
                 Console.WriteLine(UiMessages.AnagramsNotFoundMsg);
+                Console.WriteLine(UiMessages.BorderMsg);
                 Console.WriteLine();
                 return;
             }
 
+            Console.WriteLine(UiMessages.BorderMsg);
             Console.WriteLine("\"" + _userInputToFind + "\" " + UiMessages.AnagramsFoundMsg);
             Console.WriteLine(UiMessages.BorderMsg);
 
